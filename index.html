@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ar" class="scroll-smooth dark" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">مينا هانى فكرى — بناء الحلول الرقمية بالذكاء الاصطناعي وذكاء الأعمال Power BI</title>
+  <meta name="description" id="pageDesc" content="الملف المهني لمينا هانى فكرى - متخصص إدارة العمليات وبناء التطبيقات الرقمية بالذكاء الاصطناعي، وتحليل بيانات الأعمال Power BI." />
+
+  <!-- Google Fonts: Cairo (Arabic), Plus Jakarta Sans (English), JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Cairo', '"Plus Jakarta Sans"', 'sans-serif'],
+            en: ['"Plus Jakarta Sans"', 'Cairo', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles (with cache-busting v=4.1) -->
+  <link rel="stylesheet" href="style.css?v=4.1" />
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- Ambient Background Gradients -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="ambient-glow absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-brand-600/15 via-cyan-500/10 to-transparent blur-3xl opacity-70 dark:opacity-60"></div>
+    <div class="ambient-glow absolute top-[40%] -right-40 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-500/10 via-indigo-600/10 to-transparent blur-3xl opacity-50 dark:opacity-60"></div>
+    <div class="ambient-glow absolute bottom-10 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-600/10 via-brand-600/10 to-transparent blur-3xl opacity-50 dark:opacity-60"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/95 dark:bg-slate-950/85 border-b border-slate-200 dark:border-slate-800/80 transition-colors shadow-sm dark:shadow-none">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center font-bold text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          M
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors" data-i18n="brandName">مينا هانى فكرى</span>
+          <span class="text-[11px] text-slate-500 dark:text-slate-400 font-mono -mt-0.5" data-i18n="brandRole">بناء الحلول بالذكاء الاصطناعي • Power BI</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#ecosystem" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navEcosystem">المنظومة المتكاملة</a>
+        <a href="#projects" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navProjects">المشاريع البارزة</a>
+        <a href="#data-modeling" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navModeling">تحليل البيانات وDAX</a>
+        <a href="#skills" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navSkills">المهارات والذكاء الاصطناعي</a>
+        <a href="#contact" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navContact">تواصل معي</a>
+      </nav>
+
+      <!-- Header Actions: Language Switcher, Theme Toggle, CV Download -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        
+        <!-- Language Switcher Button (Directly Next to Light/Dark Toggle) -->
+        <button id="langToggle" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-all shadow-sm" title="Switch Language / تغيير اللغة">
+          <i data-lucide="globe" class="w-4 h-4 text-cyan-600 dark:text-cyan-400"></i>
+          <span id="langLabel" class="font-mono">English</span>
+        </button>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 transition-colors shadow-sm" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-indigo-600"></i>
+        </button>
+
+        <!-- Download CV Button -->
+        <a href="assets/cv/Mina_Hany_Fekry_CV.pdf" target="_blank" download="Mina_Hany_Fekry_CV.pdf" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-200 transition-all shadow-sm">
+          <i data-lucide="file-down" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400"></i>
+          <span data-i18n="navDownloadCv">تحميل السيرة الذاتية (CV)</span>
+        </a>
+
+        <!-- Case Studies CTA -->
+        <a href="#projects" class="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/30 transition-all hover:shadow-brand-500/40">
+          <span data-i18n="navCaseStudiesBtn">استعراض المشاريع</span>
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-14 pb-14 lg:pt-20 lg:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left Column: Bio & Pitch (7 cols) -->
+      <div class="lg:col-span-7">
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 mb-5 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span data-i18n="heroStatus">متاح للأدوار الاستراتيجية ومشاريع التحول الرقمي</span>
+        </div>
+
+        <!-- Main Identity Headline -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.25]">
+          <span id="heroNameText" data-i18n="heroName">مينا هانى فكرى</span>
+          <span class="block text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-brand-600 via-cyan-600 to-emerald-600 dark:from-brand-400 dark:via-cyan-400 dark:to-emerald-400 bg-clip-text text-transparent mt-2" data-i18n="heroHeadlineSecondary">
+            خبير بناء الحلول بالذكاء الاصطناعي و Power BI
+          </span>
+        </h1>
+
+        <p class="mt-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-mono" data-i18n="heroRole">
+          بناء الأنظمة بالذكاء الاصطناعي • أتمتة العمليات التشغيلية • ذكاء الأعمال Power BI
+        </p>
+
+        <!-- Explicit AI Methodology Statement Box -->
+        <div class="mt-5 p-4 rounded-xl bg-gradient-to-r from-cyan-500/10 via-brand-500/10 to-transparent border border-cyan-500/30 shadow-sm flex items-start gap-3">
+          <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium" data-i18n="heroAiStatement">
+            <strong>منهجية العمل والابتكار:</strong> لست مهندس برمجيات تقليدياً؛ بل أقوم بابتكار وبناء وبرمجة هذه الحلول والأنظمة المتكاملة بالكامل عن طريق <strong>توظيف أدوات ونماذج الذكاء الاصطناعي (AI-Driven Development)</strong>، لتحويل خبرتي العميقة في إدارة العمليات والمبيعات إلى تطبيقات واقعية ملموسة.
+          </p>
+        </div>
+
+        <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl" data-i18n="heroIntro">
+          أقوم بتصميم وتنفيذ حلول رقمية متكاملة من البداية للنهاية عبر الذكاء الاصطناعي: من <strong>بوابات الويب</strong> السريعة وتطبيقات <strong>أندرويد</strong> الميدانية، إلى خطوط ربط البيانات بـ Google Sheets، ولوحات تحكم <strong>Power BI</strong> التنفيذية القائمة على النموذج النجمي (Star Schema) وصيغ DAX المتقدمة.
+        </p>
+
+        <!-- Focus Tags -->
+        <div class="mt-7 flex flex-wrap gap-2 text-xs font-medium">
+          <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-cyan-700 dark:text-cyan-400 flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> <span data-i18n="heroTagAiBuild">بناء الأنظمة بالذكاء الاصطناعي</span>
+          </span>
+          <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> <span data-i18n="heroTagAndroid">تطبيقات أندرويد الميدانية</span>
+          </span>
+          <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-indigo-700 dark:text-indigo-400 flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="globe" class="w-3.5 h-3.5"></i> <span data-i18n="heroTagWeb">بوابات الويب التشغيلية</span>
+          </span>
+          <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-amber-700 dark:text-amber-400 flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i> <span data-i18n="heroTagPbi">تحليلات Power BI و DAX</span>
+          </span>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="mt-9 flex flex-wrap items-center gap-3.5">
+          <a href="#projects" class="px-5 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 text-white font-semibold text-sm shadow-lg shadow-brand-600/25 flex items-center gap-2 transition-all hover:scale-[1.02]">
+            <span data-i18n="heroCtaProjects">استكشاف المشاريع الحية</span>
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </a>
+          <a href="assets/cv/Mina_Hany_Fekry_CV.pdf" target="_blank" download="Mina_Hany_Fekry_CV.pdf" class="px-5 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-cyan-500 text-slate-800 dark:text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-sm">
+            <i data-lucide="file-text" class="w-4 h-4 text-cyan-600 dark:text-cyan-400"></i>
+            <span data-i18n="heroCtaCv">تحميل السيرة الذاتية الرسمية (PDF)</span>
+          </a>
+          <a href="#contact" class="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-850 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+            <span data-i18n="heroCtaContact">تواصل معي مباشرة</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Portrait & Verified Channels Card (5 cols) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="w-full max-w-sm rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-xl dark:shadow-2xl relative overflow-hidden group">
+          <!-- Subtle Glow -->
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <!-- Portrait Image -->
+          <div class="flex flex-col items-center text-center">
+            <div class="relative w-36 h-36 rounded-2xl overflow-hidden border-2 border-cyan-500/40 p-1 bg-slate-100 dark:bg-slate-950 shadow-lg shadow-cyan-500/10 group-hover:scale-105 transition-transform duration-300">
+              <img src="assets/images/profile.jpg" alt="Mina Hany Fekry" class="w-full h-full object-cover rounded-xl">
+              <div class="absolute bottom-2 right-2 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 shadow" title="Available for work"></div>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-slate-900 dark:text-white" data-i18n="profileTitle">مينا هانى فكرى</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" data-i18n="profileRole">بناء الحلول بالذكاء الاصطناعي وPower BI</p>
+          </div>
+
+          <!-- Direct Verified Channels -->
+          <div class="mt-5 space-y-2.5 text-xs font-mono pt-4 border-t border-slate-200 dark:border-slate-800/80">
+            <!-- Email -->
+            <a href="mailto:minahany1987@gmail.com" class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 dark:bg-slate-950/60 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0"></i>
+              <span class="truncate">minahany1987@gmail.com</span>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:01222522728" class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 dark:bg-slate-950/60 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/30 text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0"></i>
+              <span dir="ltr">01222522728 • +20 122 252 2728</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/mina-hany-fekry-63004a327" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 dark:bg-slate-950/60 hover:bg-indigo-50 dark:hover:bg-brand-500/10 border border-slate-200 dark:border-slate-800 hover:border-brand-500/30 text-slate-700 dark:text-slate-300 hover:text-indigo-700 dark:hover:text-brand-300 transition-colors">
+              <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 fill-current shrink-0" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.67 1.67 0 0 0 1.66-1.66c0-.92-.74-1.66-1.66-1.66Z"/>
+              </svg>
+              <span class="truncate">mina-hany-fekry-63004a327</span>
+            </a>
+          </div>
+
+          <!-- CV Quick Link -->
+          <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800/80 text-center">
+            <a href="assets/cv/Mina_Hany_Fekry_CV.pdf" target="_blank" download="Mina_Hany_Fekry_CV.pdf" class="text-xs text-cyan-700 dark:text-cyan-400 hover:underline font-semibold flex items-center justify-center gap-1.5">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span data-i18n="profileDownloadResume">تحميل السيرة الذاتية الرسمية (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Confidentiality / NDA Trust Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 backdrop-blur-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span data-i18n="trustTitle">سرية البيانات المؤسسية والنزاهة الرقمية</span>
+            <span class="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30" data-i18n="trustBadge">متوافق مع معايير NDA</span>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed" data-i18n="trustDesc">
+            جميع الأنظمة المعروضة تمثل بنيات حقيقية في قطاع <strong>إدارة العضويات والمبيعات</strong>. تم استبدال الهويات الفعلية والأرقام الحساسة ببيانات وهمية متناسقة للحفاظ على السرية التامة للمؤسسات.
+          </p>
+        </div>
+      </div>
+      <div class="text-xs text-slate-500 dark:text-slate-400 shrink-0 flex items-center gap-1.5 font-mono">
+        <i data-lucide="lock" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
+        <span data-i18n="trustTag">بيانات وهمية ونموذج نجمي محمي</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Integrated Ecosystem Section -->
+  <section id="ecosystem" class="py-16 border-t border-slate-200 dark:border-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs font-bold tracking-widest text-cyan-700 dark:text-cyan-400 uppercase font-mono" data-i18n="ecoOverline">الهندسة المعمارية والتكامل</h2>
+        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2" data-i18n="ecoTitle">المنظومة الرقمية الشاملة</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-3" data-i18n="ecoSubtitle">
+          لا تعمل التطبيقات البرمجية في جزر منعزلة. توضح هذه الخريطة كيف تتكامل بوابة الويب، وتطبيق أندرويد الميداني، والـ Webhooks السحابية لـ Google Sheets، ومنظومة التنبيهات الآلية، مع لوحات تحكم Power BI المركزية.
+        </p>
+      </div>
+
+      <!-- Ecosystem Diagram Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+        <!-- Node 1: Web Portal -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 transition-all group relative shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[10px] font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-400 font-mono" data-i18n="ecoNode1Layer">طبقة العمليات التشغيلية</span>
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-1" data-i18n="ecoNode1Title">بوابة الويب لإدارة العمليات</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed" data-i18n="ecoNode1Desc">
+            مركز القيادة اليومي لإدارة المشتركين، وحساب الرسوم والتجديدات، وتصنيف العملاء المحتملين بالذكاء الاصطناعي لتحفيز مسؤولي المبيعات.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1 text-cyan-700 dark:text-cyan-400 font-medium">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> <span data-i18n="ecoNode1Badge">تصنيف العملاء بالـ AI</span>
+            </span>
+            <span data-i18n="ecoNode1Platform">منصة الويب</span>
+          </div>
+        </div>
+
+        <!-- Node 2: Android App & Webhook Pipeline -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 transition-all group relative shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="smartphone" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[10px] font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-mono" data-i18n="ecoNode2Layer">تطبيقات الموبايل والأتمتة السحابية</span>
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-1" data-i18n="ecoNode2Title">تطبيق العمليات والتنبيهات المؤتمتة</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed" data-i18n="ecoNode2Desc">
+            تطبيق ميداني يربط الفروع بـ <strong>Google Sheets</strong> عبر Webhooks لحظية، مع فحص دوري يومي يرسل <strong>إشعارات تحذيرية ورسائل بريد إلكتروني للإدارة</strong> بالأندية التي لم ترسل تقريرها.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-medium">
+              <i data-lucide="bell-ring" class="w-3.5 h-3.5"></i> <span data-i18n="ecoNode2Badge">Webhooks وتنبيهات يومية</span>
+            </span>
+            <span data-i18n="ecoNode2Platform">أندرويد + سحابة جوجل</span>
+          </div>
+        </div>
+
+        <!-- Node 3: Power BI Dashboard -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 transition-all group relative shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="pie-chart" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400 font-mono" data-i18n="ecoNode3Layer">طبقة الذكاء والتحليلات التنفيذية</span>
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-1" data-i18n="ecoNode3Title">مركز تحليلات القيادة العليا</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed" data-i18n="ecoNode3Desc">
+            سحب البيانات المباشر من Google Sheets إلى نموذج نجمي (Star Schema) يقدم مؤشرات الأداء الحيوية: معدلات التجديد والانسحاب، والإيرادات الشهرية، ومستهدفات الفروع.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1 text-amber-700 dark:text-amber-400 font-medium">
+              <i data-lucide="database" class="w-3.5 h-3.5"></i> <span data-i18n="ecoNode3Badge">نموذج نجمي ومعادلات DAX</span>
+            </span>
+            <span data-i18n="ecoNode3Platform">Power BI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <h2 class="text-xs font-bold tracking-widest text-cyan-700 dark:text-cyan-400 uppercase font-mono" data-i18n="projOverline">دراسات الحالة والأنظمة الحية</h2>
+        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="projTitle">أبرز المشاريع الإنتاجية المكتملة</h3>
+      </div>
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-1.5 p-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-300 shadow-sm">
+        <button class="filter-btn active px-3 py-1.5 rounded-lg transition-all" data-filter="all" data-i18n="filterAll">كل المشاريع</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg transition-all" data-filter="web" data-i18n="filterWeb">الويب والذكاء الاصطناعي</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg transition-all" data-filter="android" data-i18n="filterAndroid">تطبيقات أندرويد</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg transition-all" data-filter="powerbi" data-i18n="filterPbi">Power BI</button>
+      </div>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Project 1: Web App -->
+      <div class="project-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:border-slate-300 dark:hover:border-slate-700 transition-all shadow-md dark:shadow-xl" data-category="web">
+        <!-- Card Header Mockup -->
+        <div class="p-6 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-850 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800 relative">
+          <div class="flex items-center justify-between text-xs mb-3 text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5 font-mono text-cyan-700 dark:text-cyan-400 font-semibold">
+              <i data-lucide="globe" class="w-3.5 h-3.5"></i> <span data-i18n="p1Category">تطبيقات الويب والذكاء الاصطناعي</span>
+            </span>
+            <span class="px-2 py-0.5 rounded bg-brand-500/10 text-brand-700 dark:text-brand-400 border border-brand-500/20 text-[11px] font-semibold" data-i18n="p1Badge">نظام مؤسسي</span>
+          </div>
+          
+          <!-- Clickable Title -->
+          <h4 class="text-xl font-bold text-slate-900 dark:text-white cursor-pointer hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors open-case-study flex items-center justify-between group/title" data-study="web" data-view="0">
+            <span data-i18n="p1Title">بوابة إدارة العضويات والمبيعات الذكية</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover/title:opacity-100 transition-opacity text-cyan-600 dark:text-cyan-400 shrink-0"></i>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed" data-i18n="p1Desc">
+            منظومة متكاملة لإدارة دورة حياة العضويات، ومطابقة الرسوم، وأتمتة تصنيف العملاء وتجديد الاشتراكات عبر الفروع.
+          </p>
+
+          <!-- Dashboard Visual Preview (Clickable) -->
+          <div class="mt-4 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 relative group cursor-pointer open-case-study shadow-inner" data-study="web" data-view="0">
+            <img src="assets/images/web_clean/web_portal_hub_clean.png" alt="Smart Web Management Portal Hub" class="w-full h-36 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-semibold text-white backdrop-blur-[2px]">
+              <i data-lucide="maximize-2" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="p1Preview">انقر لاستعراض شاشات النظام الحية</span>
+            </div>
+            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-cyan-700 dark:text-cyan-300 flex items-center gap-1 shadow">
+              <i data-lucide="layout" class="w-3 h-3"></i> <span data-i18n="p1ViewsCount">6 شاشات ويب</span>
+            </div>
+          </div>
+
+          <!-- Direct Screen Selector Chips Under Preview -->
+          <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-mono">
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-cyan-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="web" data-view="0" data-i18n="p1Chip0">1. البوابة</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-cyan-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="web" data-view="1" data-i18n="p1Chip1">2. الحاسبة</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-cyan-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="web" data-view="2" data-i18n="p1Chip2">3. المقابلات</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-cyan-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="web" data-view="3" data-i18n="p1Chip3">4. الصلاحيات</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-cyan-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="web" data-view="4" data-i18n="p1Chip4">5. الإيرادات</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-cyan-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="web" data-view="5" data-i18n="p1Chip5">6. الكروت</button>
+          </div>
+        </div>
+
+        <!-- Card Body Metrics -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono" data-i18n="p1Impact">الأثر التشغيلي المحقق</span>
+            <div class="grid grid-cols-2 gap-3 mt-2">
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850">
+                <div class="text-lg font-bold text-cyan-700 dark:text-cyan-400" data-i18n="p1Metric1Val">+38%</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="p1Metric1Lbl">سرعة استجابة المبيعات</div>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850">
+                <div class="text-lg font-bold text-emerald-700 dark:text-emerald-400" data-i18n="p1Metric2Val">+24%</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="p1Metric2Lbl">التزام بتجديد الاشتراكات</div>
+              </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">AI-Prompted React</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python API</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">LLM Lead Scoring</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">RBAC Security</span>
+            </div>
+          </div>
+
+          <!-- Action -->
+          <button class="open-case-study mt-6 w-full py-2.5 rounded-xl bg-slate-100 hover:bg-brand-600 hover:text-white dark:bg-slate-800 dark:hover:bg-brand-600 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-sm" data-study="web" data-view="0">
+            <span data-i18n="p1Btn">استعراض دراسة الحالة والشاشات</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 2: Android App -->
+      <div class="project-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:border-slate-300 dark:hover:border-slate-700 transition-all shadow-md dark:shadow-xl" data-category="android">
+        <!-- Card Header Mockup -->
+        <div class="p-6 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-850 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800 relative">
+          <div class="flex items-center justify-between text-xs mb-3 text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5 font-mono text-emerald-700 dark:text-emerald-400 font-semibold">
+              <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> <span data-i18n="p2Category">تطبيقات أندرويد والأتمتة</span>
+            </span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 text-[11px] font-semibold" data-i18n="p2Badge">عمليات ميدانية</span>
+          </div>
+          
+          <h4 class="text-xl font-bold text-slate-900 dark:text-white cursor-pointer hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors open-case-study flex items-center justify-between group/title" data-study="android" data-view="0">
+            <span data-i18n="p2Title">تطبيق العمليات الميدانية ومنظومة التنبيهات</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover/title:opacity-100 transition-opacity text-emerald-600 dark:text-emerald-400 shrink-0"></i>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed" data-i18n="p2Desc">
+            تطبيق موبايل يربط الفروع بـ Google Sheets عبر Webhooks، مع إشعارات Push ورسائل بريد إلكتروني تلقائية للفروع المتأخرة.
+          </p>
+
+          <!-- Dashboard Visual Preview -->
+          <div class="mt-4 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 relative group cursor-pointer open-case-study shadow-inner" data-study="android" data-view="0">
+            <img src="assets/images/app_clean/app_home_portal.jpg" alt="Android App Home Portal" class="w-full h-36 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-semibold text-white backdrop-blur-[2px]">
+              <i data-lucide="maximize-2" class="w-4 h-4 text-emerald-400"></i>
+              <span data-i18n="p2Preview">انقر لاستعراض شاشات التطبيق والتنبيهات</span>
+            </div>
+            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-emerald-700 dark:text-emerald-300 flex items-center gap-1 shadow">
+              <i data-lucide="smartphone" class="w-3 h-3"></i> <span data-i18n="p2ViewsCount">6 شاشات موبايل</span>
+            </div>
+          </div>
+
+          <!-- Direct Screen Selector Chips -->
+          <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-mono">
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-emerald-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="android" data-view="0" data-i18n="p2Chip0">1. الرئيسية</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-emerald-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="android" data-view="1" data-i18n="p2Chip1">2. إدخال التقرير</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-emerald-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="android" data-view="2" data-i18n="p2Chip2">3. متابعة الأداء</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-emerald-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="android" data-view="3" data-i18n="p2Chip3">4. تنبيه Push</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-emerald-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="android" data-view="4" data-i18n="p2Chip4">5. إيميل الإدارة</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-emerald-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="android" data-view="5" data-i18n="p2Chip5">6. خطة العمل</button>
+          </div>
+        </div>
+
+        <!-- Card Body Metrics -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono" data-i18n="p2Impact">الأثر التشغيلي المحقق</span>
+            <div class="grid grid-cols-2 gap-3 mt-2">
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850">
+                <div class="text-lg font-bold text-emerald-700 dark:text-emerald-400" data-i18n="p2Metric1Val">100%</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="p2Metric1Lbl">التزام الفروع بالتقارير</div>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850">
+                <div class="text-lg font-bold text-cyan-700 dark:text-cyan-400" data-i18n="p2Metric2Val">0 دقيقة</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="p2Metric2Lbl">متابعات هاتفية يدوية</div>
+              </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">AI-Assisted Kotlin</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Google Apps Script</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Webhook Sync</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Automated Alerts</span>
+            </div>
+          </div>
+
+          <!-- Action -->
+          <button class="open-case-study mt-6 w-full py-2.5 rounded-xl bg-slate-100 hover:bg-emerald-600 hover:text-white dark:bg-slate-800 dark:hover:bg-emerald-600 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-sm" data-study="android" data-view="0">
+            <span data-i18n="p2Btn">استعراض دراسة الحالة والشاشات</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 3: Power BI Dashboard -->
+      <div class="project-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:border-slate-300 dark:hover:border-slate-700 transition-all shadow-md dark:shadow-xl" data-category="powerbi">
+        <!-- Card Header Mockup -->
+        <div class="p-6 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-850 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800 relative">
+          <div class="flex items-center justify-between text-xs mb-3 text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5 font-mono text-amber-700 dark:text-amber-400 font-semibold">
+              <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> <span data-i18n="p3Category">Power BI ونمذجة البيانات</span>
+            </span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-[11px] font-semibold" data-i18n="p3Badge">ذكاء أعمال تنفيذي</span>
+          </div>
+          
+          <h4 class="text-xl font-bold text-slate-900 dark:text-white cursor-pointer hover:text-amber-600 dark:hover:text-amber-400 transition-colors open-case-study flex items-center justify-between group/title" data-study="powerbi" data-view="0">
+            <span data-i18n="p3Title">لوحة تحليلات المبيعات ودورة حياة العضويات</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover/title:opacity-100 transition-opacity text-amber-600 dark:text-amber-400 shrink-0"></i>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed" data-i18n="p3Desc">
+            نموذج بيانات نجمي يحلل ملايين المعاملات إلى مؤشرات أداء تنفيذية، ومعدلات بقاء الأعضاء، وقياس مستهدفات الفروع.
+          </p>
+
+          <!-- Dashboard Visual Preview -->
+          <div class="mt-4 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 relative group cursor-pointer open-case-study shadow-inner" data-study="powerbi" data-view="0">
+            <img src="assets/images/powerbi_dashboard_1_clean.png" alt="Power BI Executive Sales Dashboard" class="w-full h-36 object-cover object-top group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-semibold text-white backdrop-blur-[2px]">
+              <i data-lucide="maximize-2" class="w-4 h-4 text-amber-400"></i>
+              <span data-i18n="p3Preview">انقر لاستعراض شاشات الداشبورد التفاعلية</span>
+            </div>
+            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-amber-700 dark:text-amber-300 flex items-center gap-1 shadow">
+              <i data-lucide="layers" class="w-3 h-3"></i> <span data-i18n="p3ViewsCount">3 شاشات تحليلية</span>
+            </div>
+          </div>
+
+          <!-- Direct Screen Selector Chips -->
+          <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-mono">
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="powerbi" data-view="0" data-i18n="p3Chip0">1. المبيعات</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="powerbi" data-view="1" data-i18n="p3Chip1">2. شجرة الأسباب</button>
+            <button class="open-case-study px-2 py-1 rounded bg-slate-200/80 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 transition-colors" data-study="powerbi" data-view="2" data-i18n="p3Chip2">3. المستهدفات</button>
+          </div>
+        </div>
+
+        <!-- Card Body Metrics -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono" data-i18n="p3Impact">الأثر التشغيلي المحقق</span>
+            <div class="grid grid-cols-2 gap-3 mt-2">
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850">
+                <div class="text-lg font-bold text-amber-700 dark:text-amber-400" data-i18n="p3Metric1Val">85%</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="p3Metric1Lbl">تسريع اتخاذ القرار</div>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850">
+                <div class="text-lg font-bold text-cyan-700 dark:text-cyan-400" data-i18n="p3Metric2Val">100%</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="p3Metric2Lbl">شفافية قياس التارجت</div>
+              </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Power BI Desktop</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Star Schema</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Complex DAX</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Dynamic RLS</span>
+            </div>
+          </div>
+
+          <!-- Action -->
+          <button class="open-case-study mt-6 w-full py-2.5 rounded-xl bg-slate-100 hover:bg-amber-600 hover:text-white dark:bg-slate-800 dark:hover:bg-amber-600 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-sm" data-study="powerbi" data-view="0">
+            <span data-i18n="p3Btn">استعراض دراسة الحالة والشاشات</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Data Modeling & DAX Showcase Section -->
+  <section id="data-modeling" class="py-16 bg-slate-100/70 dark:bg-slate-950/60 border-t border-b border-slate-200 dark:border-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-xs font-bold tracking-widest text-amber-700 dark:text-amber-400 uppercase font-mono" data-i18n="modelOverline">الهندسة المعمارية لـ Power BI</h2>
+        <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2" data-i18n="modelTitle">النموذج النجمي (Star Schema) وصيغ DAX</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-3" data-i18n="modelSubtitle">
+          يبدأ أي نظام ذكاء أعمال ناجح بنمذجة بيانات هندسية محكمة. إليك الهيكل البعدي ونماذج من المقاييس الحسابية التي تشغل لوحة المؤشرات.
+        </p>
+      </div>
+
+      <!-- Dual Column: Star Schema Diagram & DAX Tabs -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Star Schema Visualization (5 cols) -->
+        <div class="lg:col-span-5 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i data-lucide="database" class="w-4 h-4 text-cyan-600 dark:text-cyan-400"></i>
+              <span data-i18n="modelSchemaTitle">هيكل النموذج النجمي (Star Schema)</span>
+            </h4>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20" data-i18n="modelSchemaBadge">علاقات 1 إلى متعدد</span>
+          </div>
+
+          <div class="space-y-3 font-mono text-xs">
+            <!-- Central Fact Table -->
+            <div class="p-4 rounded-xl bg-amber-500/10 dark:bg-gradient-to-r dark:from-amber-500/10 dark:via-brand-500/10 dark:to-cyan-500/10 border-2 border-amber-500/40 text-center">
+              <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider block" data-i18n="modelFactTitle">جدول الحقائق المركزي (Fact Table)</span>
+              <span class="text-sm font-bold text-slate-900 dark:text-white">Fact_Subscriptions</span>
+              <div class="mt-2 text-[11px] text-slate-600 dark:text-slate-400 flex flex-wrap justify-center gap-1" dir="ltr">
+                <span class="px-1.5 py-0.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded">Transaction_ID</span>
+                <span class="px-1.5 py-0.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded">Member_ID (FK)</span>
+                <span class="px-1.5 py-0.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded">Plan_ID (FK)</span>
+                <span class="px-1.5 py-0.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded">Agent_ID (FK)</span>
+                <span class="px-1.5 py-0.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded">Net_Amount</span>
+              </div>
+            </div>
+
+            <!-- Surrounding Dimension Tables -->
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-cyan-700 dark:text-cyan-400 font-bold block" dir="ltr">Dim_Members</span>
+                <span class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="dimMembers">بيانات الأعضاء وفئاتهم</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-cyan-700 dark:text-cyan-400 font-bold block" dir="ltr">Dim_Plans</span>
+                <span class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="dimPlans">أنواع الباقات والأسعار</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-cyan-700 dark:text-cyan-400 font-bold block" dir="ltr">Dim_Sales_Agents</span>
+                <span class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="dimAgents">مسؤولو المبيعات والمستهدفات</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-cyan-700 dark:text-cyan-400 font-bold block" dir="ltr">Dim_Date (Calendar)</span>
+                <span class="text-[11px] text-slate-500 dark:text-slate-400" data-i18n="dimDate">جدول التواريخ ومقارنات الفترات</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive DAX Measure Tabs (7 cols) -->
+        <div class="lg:col-span-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+          <div class="p-4 bg-slate-50 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <i data-lucide="code-2" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+              <span class="text-xs font-bold text-slate-900 dark:text-white" data-i18n="modelDaxTitle">معادلات DAX الإنتاجية</span>
+            </div>
+            <!-- DAX Selector Buttons -->
+            <div class="flex gap-1" id="daxTabs">
+              <button class="dax-tab-btn active px-2.5 py-1 rounded text-xs font-mono transition-colors" data-dax="revenue" data-i18n="daxTab1">نمو الإيرادات (MoM)</button>
+              <button class="dax-tab-btn px-2.5 py-1 rounded text-xs font-mono transition-colors" data-dax="retention" data-i18n="daxTab2">معدل التجديد %</button>
+              <button class="dax-tab-btn px-2.5 py-1 rounded text-xs font-mono transition-colors" data-dax="quota" data-i18n="daxTab3">تحقيق المستهدف %</button>
+            </div>
+          </div>
+
+          <!-- Code Box -->
+          <div class="p-5 bg-slate-950 text-emerald-400 font-mono text-xs leading-relaxed overflow-x-auto relative shadow-inner" dir="ltr">
+            <pre id="daxCode"><code>// Calculating Month-over-Month Revenue Growth %
+Total Net Revenue = 
+SUM(Fact_Subscriptions[Net_Amount])
+
+Revenue Prior Month = 
+CALCULATE(
+    [Total Net Revenue],
+    DATEADD(Dim_Date[Date], -1, MONTH)
+)
+
+MoM Revenue Growth % = 
+DIVIDE(
+    [Total Net Revenue] - [Revenue Prior Month],
+    [Revenue Prior Month],
+    0
+)</code></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Technical Matrix -->
+  <section id="skills" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-xs font-bold tracking-widest text-cyan-700 dark:text-cyan-400 uppercase font-mono" data-i18n="skillsOverline">القدرات والخبرات العملية</h2>
+      <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="skillsTitle">المصفوفة التقنية وبناء الحلول بالذكاء الاصطناعي</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Col 1: AI-Driven Web Building -->
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-3">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2" data-i18n="skillCol1Title">تطوير الويب بالـ AI</h4>
+        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400"></i> <span data-i18n="skillCol1Item1">بناء الواجهات بنماذج الذكاء الاصطناعي</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400"></i> <span data-i18n="skillCol1Item2">تطوير واجهات React & Next.js</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400"></i> <span data-i18n="skillCol1Item3">برمجة مسارات Python & FastAPI</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400"></i> <span data-i18n="skillCol1Item4">هندسة الأوامر المتقدمة (Prompts)</span></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: AI-Driven Mobile -->
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3">
+          <i data-lucide="smartphone" class="w-5 h-5"></i>
+        </div>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2" data-i18n="skillCol2Title">تطبيقات الموبايل بالـ AI</h4>
+        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="skillCol2Item1">بناء تطبيقات أندرويد عبر الذكاء الاصطناعي</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="skillCol2Item2">تطبيقات Kotlin وهيكل MVVM</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="skillCol2Item3">مزامنة Webhooks السحابية</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i> <span data-i18n="skillCol2Item4">أنظمة التنبيهات الميدانية المؤتمتة</span></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: AI & Workflows -->
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-3">
+          <i data-lucide="cpu" class="w-5 h-5"></i>
+        </div>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2" data-i18n="skillCol3Title">أتمتة الذكاء الاصطناعي</h4>
+        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i> <span data-i18n="skillCol3Item1">توظيف واجهات LLM APIs المتقدمة</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i> <span data-i18n="skillCol3Item2">محركات تصنيف العملاء المحتملين بالـ AI</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i> <span data-i18n="skillCol3Item3">وكلاء المساعدة الذكية (Concierge Agents)</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i> <span data-i18n="skillCol3Item4">توليد عروض التجديد المخصصة تلقائياً</span></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Business Intelligence -->
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3">
+          <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+        </div>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2" data-i18n="skillCol4Title">ذكاء الأعمال والتحليلات</h4>
+        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i> <span data-i18n="skillCol4Item1">Microsoft Power BI & Service</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i> <span data-i18n="skillCol4Item2">النموذج النجمي (Star Schema) البعدي</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i> <span data-i18n="skillCol4Item3">معادلات DAX وحسابات Time Intelligence</span></li>
+          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i> <span data-i18n="skillCol4Item4">أمن البيانات المتقدم (Dynamic RLS)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 border-t border-slate-200 dark:border-slate-900 bg-slate-100/50 dark:bg-slate-950 transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold tracking-widest text-cyan-700 dark:text-cyan-400 uppercase font-mono" data-i18n="contactOverline">قنوات الاتصال المباشرة</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2" data-i18n="contactTitle">ابدأ التواصل الآن</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-3" data-i18n="contactSubtitle">
+          متاح للأدوار الاستشارية والتشغيلية، وبناء الحلول الرقمية بالذكاء الاصطناعي، وتطوير لوحات Power BI المؤسسية المتقدمة.
+        </p>
+      </div>
+
+      <!-- 4 Direct Contact Channels Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Channel 1: Email -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-semibold" data-i18n="contactEmailChannel">البريد الإلكتروني المباشر</span>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1" data-i18n="contactEmailTitle">إرسال رسالة بريد</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono break-all" dir="ltr">minahany1987@gmail.com</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-850">
+            <a href="mailto:minahany1987@gmail.com" class="w-full py-2 px-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span data-i18n="contactEmailBtn">مراسلة فورية</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Channel 2: Phone & WhatsApp -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="phone-call" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-semibold" data-i18n="contactPhoneChannel">الهاتف وواتساب</span>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1" data-i18n="contactPhoneTitle">اتصال ومراسلة</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono" dir="ltr">01222522728 • +20 122 252 2728</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-850 flex gap-2">
+            <a href="tel:01222522728" class="flex-1 py-2 px-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center justify-center gap-1 transition-colors shadow-sm">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+              <span data-i18n="contactPhoneCallBtn">اتصال</span>
+            </a>
+            <a href="https://wa.me/201222522728" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-750 text-emerald-700 dark:text-emerald-400 text-xs font-semibold flex items-center justify-center gap-1 transition-colors border border-emerald-500/30">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+              <span data-i18n="contactPhoneWaBtn">واتساب</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Channel 3: LinkedIn -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500/40 transition-all flex flex-col justify-between group shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400 fill-current" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.67 1.67 0 0 0 1.66-1.66c0-.92-.74-1.66-1.66-1.66Z"/>
+              </svg>
+            </div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-semibold" data-i18n="contactLinkedinChannel">الشبكة المهنية</span>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1" data-i18n="contactLinkedinTitle">حساب LinkedIn</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono truncate" dir="ltr">mina-hany-fekry-63004a327</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-850">
+            <a href="https://www.linkedin.com/in/mina-hany-fekry-63004a327" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span data-i18n="contactLinkedinBtn">زيارة الحساب</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Channel 4: CV Download -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between group shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="file-text" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-amber-700 dark:text-amber-400 font-semibold" data-i18n="contactCvChannel">الملف المهني الرسمي</span>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1" data-i18n="contactCvTitle">السيرة الذاتية (CV)</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono" dir="ltr">PDF Document • 65 KB</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-850">
+            <a href="assets/cv/Mina_Hany_Fekry_CV.pdf" target="_blank" download="Mina_Hany_Fekry_CV.pdf" class="w-full py-2 px-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span data-i18n="contactCvBtn">تحميل الـ CV (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Footer Info -->
+      <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-900 text-xs text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div data-i18n="footerCopy">&copy; 2026 مينا هانى فكرى. جميع الحقوق محفوظة. صُمم وفقاً لمعايير السرية المؤسسية.</div>
+        <div class="flex items-center gap-4 text-xs font-medium">
+          <a href="#ecosystem" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navEcosystem">المنظومة</a>
+          <a href="#projects" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navProjects">المشاريع</a>
+          <a href="#data-modeling" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" data-i18n="navModeling">تحليل البيانات</a>
+          <a href="assets/cv/Mina_Hany_Fekry_CV.pdf" target="_blank" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-i18n="navDownloadCv">تحميل السيرة الذاتية</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fullscreen High-Resolution Image Lightbox Modal -->
+  <div id="imageLightbox" class="fixed inset-0 z-[70] bg-slate-950/95 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6">
+    <div class="relative w-full max-w-5xl max-h-[95vh] flex flex-col items-center">
+      
+      <!-- Lightbox Header Bar -->
+      <div class="w-full flex items-center justify-between pb-3 text-white border-b border-slate-800 mb-3 px-2">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span id="lightboxTitle" class="text-sm font-bold font-mono text-cyan-300">عرض عالي الدقة</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="lightboxDownload" href="#" target="_blank" download class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-colors border border-slate-700" title="Open Full Size In New Tab">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span id="lightboxOpenFullTxt" class="hidden sm:inline" data-i18n="lightboxOpenFull">فتح بالحجم الأصلي</span>
+          </a>
+          <button id="closeLightbox" class="p-2 rounded-lg bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white transition-colors border border-slate-700" title="Close (ESC)">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Zoomable Image -->
+      <div class="relative w-full flex items-center justify-center overflow-auto rounded-xl max-h-[75vh] p-2 bg-slate-900/60 border border-slate-800 shadow-2xl">
+        <img id="lightboxImg" src="" alt="Full Screen High-Resolution Preview" class="max-w-full max-h-[72vh] object-contain rounded-lg shadow-xl transition-all duration-200">
+      </div>
+
+      <!-- Caption -->
+      <p id="lightboxCaption" class="text-xs text-slate-300 mt-3 text-center px-4 max-w-3xl leading-relaxed italic"></p>
+    </div>
+  </div>
+
+  <!-- Interactive Case Study Modal -->
+  <div id="caseStudyModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-850">
+        <div>
+          <span id="modalCategory" class="text-[10px] font-bold uppercase tracking-wider font-mono text-cyan-700 dark:text-cyan-400">دراسة حالة</span>
+          <h3 id="modalTitle" class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">تفاصيل المشروع</h3>
+        </div>
+        <button id="closeModal" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" title="Close (ESC)">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="modalBody" class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+        <!-- Injected dynamically via JavaScript based on language and view -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 flex items-center justify-between">
+        <div class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 font-mono">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+          <span data-i18n="modalNdaFooter">بيانات وهمية متوافقة مع معايير السرية NDA</span>
+        </div>
+        <button id="modalCloseBtn" class="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-colors">
+          <span data-i18n="modalCloseWindow">إغلاق النافذة</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Application (with cache-busting v=4.1) -->
+  <script src="main.js?v=4.1"></script>
+</body>
+</html>

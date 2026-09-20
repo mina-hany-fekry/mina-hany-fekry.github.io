@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Mina Hany Fekry Portfolio - Global Styles & Design System
+   Cache Version: 4.0
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+/* RTL / LTR Font Families */
+html[dir="rtl"] {
+  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+}
+
+html[dir="ltr"] {
+  font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+}
+
+/* Body Smooth Transition */
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Code container font */
+pre code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Filter buttons */
+.filter-btn.active {
+  background-color: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+}
+
+/* DAX tab buttons in dark mode */
+.dax-tab-btn.active {
+  background-color: #10b981;
+  color: #022c22;
+  font-weight: 600;
+}
+
+.dax-tab-btn:not(.active) {
+  background-color: #0f172a;
+  color: #94a3b8;
+}
+
+/* Modal and Lightbox Display */
+#caseStudyModal:not(.hidden),
+#imageLightbox:not(.hidden) {
+  display: flex;
+}
+
+/* ==========================================================================
+   LIGHT MODE: Complete Design Polish & Contrast Overhaul
+   ========================================================================== */
+
+/* Page Background & Global Text */
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Soften ambient gradients in light mode */
+html.light .ambient-glow {
+  opacity: 0.22 !important;
+  filter: blur(90px) !important;
+}
+
+/* Scrollbar in Light Mode */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+/* Navbar in Light Mode */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light header nav a {
+  color: #334155 !important;
+}
+
+html.light header nav a:hover {
+  color: #0891b2 !important;
+}
+
+/* Project Cards in Light Mode */
+html.light .project-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light .project-card:hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 16px 28px -6px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Card Mockup Headers Gradient in Light Mode */
+html.light .project-card > div:first-child {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* High-Contrast WCAG-Compliant Accent Colors for Light Mode */
+html.light .text-cyan-400,
+html.light .text-cyan-300 {
+  color: #0891b2 !important; /* cyan-600 */
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300 {
+  color: #059669 !important; /* emerald-600 */
+}
+
+html.light .text-amber-400,
+html.light .text-amber-300 {
+  color: #d97706 !important; /* amber-600 */
+}
+
+html.light .text-indigo-400,
+html.light .text-brand-400 {
+  color: #4f46e5 !important; /* indigo-600 */
+}
+
+/* Filter Tabs in Light Mode */
+html.light .filter-btn:not(.active) {
+  color: #64748b !important;
+}
+
+html.light .filter-btn:not(.active):hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+/* DAX Section & Code Box in Light Mode */
+html.light #data-modeling {
+  background-color: #f8fafc !important;
+  border-top-color: #e2e8f0 !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html.light .dax-tab-btn:not(.active) {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+html.light .dax-tab-btn.active {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+}
+
+/* DAX Code container - Always crisp dark background for readable code */
+#daxCode {
+  color: #34d399;
+}
+
+/* Case Study Modal in Light Mode */
+html.light #caseStudyModal {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+html.light #caseStudyModal > div {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+}
+
+/* Modal Gallery Tabs in Light Mode */
+html.light .web-tab,
+html.light .app-tab,
+html.light .pbi-tab {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+html.light .web-tab:hover,
+html.light .app-tab:hover,
+html.light .pbi-tab:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html.light .web-tab.active {
+  background-color: #ecfeff !important;
+  border-color: #0891b2 !important;
+  color: #0e7490 !important;
+  font-weight: 700 !important;
+}
+
+html.light .app-tab.active {
+  background-color: #ecfdf5 !important;
+  border-color: #059669 !important;
+  color: #065f46 !important;
+  font-weight: 700 !important;
+}
+
+html.light .pbi-tab.active {
+  background-color: #fffbeb !important;
+  border-color: #d97706 !important;
+  color: #92400e !important;
+  font-weight: 700 !important;
+}
+
+/* Lightbox Modal remains dark for maximum visual clarity */
+#imageLightbox {
+  background-color: rgba(2, 6, 23, 0.96) !important;
+}
+
+#imageLightbox .bg-slate-900\/60 {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+}
