@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
         challengeText: "Sales agents manually qualified leads from multiple ad sources, resulting in a 4+ hour lag in response time and lost membership deals.",
         solutionTitle: "The Solution",
         solutionText: "Integrated an AI lead scoring engine that evaluates intent and routes prospects instantly, coupled with automated 1-click renewal invoicing.",
-        galleryHeader: "Enterprise Web Operations (6 Production Views)",
+        galleryHeader: "Enterprise Web Operations (5 Production Views)",
         galleryBadge: "Click any view or tap enlarge",
         views: [
           {
@@ -387,14 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "RBAC & User Administration: Role-based access control directory managing granular permissions across regional, corporate, sales, and cards modules."
           },
           {
-            tab: "5. Revenue Analytics",
-            title: "5. Revenue Membership Analytics",
-            img: "assets/images/web_clean/web_revenue_membership_clean.png",
-            desc: "Revenue Membership Analytics: Executive revenue dashboard tracking performance, category attainment (Renewals, Additions, Freezing), and item distribution."
-          },
-          {
-            tab: "6. Cards Delivery",
-            title: "6. Cards Delivery Logistics",
+            tab: "5. Cards Delivery",
+            title: "5. Cards Delivery Logistics",
             img: "assets/images/web_clean/web_cards_delivery_clean.png",
             desc: "Cards Delivery Logistics: Real-time fulfillment scorecard comparing membership renewals against physical card receipts across all branches."
           }
@@ -537,7 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
         challengeText: "كان مسؤولو المبيعات يفرزون العملاء يدوياً من قنوات إعلانية متعددة، مما أدى لتأخير الاستجابة لأكثر من 4 ساعات وفقدان فرص اشتراكات ثمينة.",
         solutionTitle: "الحل بالذكاء الاصطناعي",
         solutionText: "تطوير محرك ذكاء اصطناعي لتقييم وتصنيف العملاء وتوزيعهم فورياً، مع أتمتة حساب وتجديد الاشتراكات بنقرة واحدة.",
-        galleryHeader: "شاشات العمليات المؤسسية (6 شاشات إنتاجية حية)",
+        galleryHeader: "شاشات العمليات المؤسسية (5 شاشات إنتاجية حية)",
         galleryBadge: "انقر على أي شاشة أو اضغط تكبير",
         views: [
           {
@@ -565,14 +559,8 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "نظام متقدم للتحكم في صلاحيات المستخدمين حسب الأدوار الوظيفية عبر الفروع، المبيعات، والإدارة المالية."
           },
           {
-            tab: "٥. تحليلات الإيرادات",
-            title: "٥. تحليلات إيرادات العضويات",
-            img: "assets/images/web_clean/web_revenue_membership_clean.png",
-            desc: "لوحة قيادية لمتابعة الإيرادات والمقارنات الدورية، ونسب تحقيق المستهدفات حسب نوع المعاملة (تجديد، إضافة، تجميد)."
-          },
-          {
-            tab: "٦. تسليم الكروت",
-            title: "٦. لوجستيات تسليم الكروت الذكية",
+            tab: "٥. تسليم الكروت",
+            title: "٥. لوجستيات تسليم الكروت الذكية",
             img: "assets/images/web_clean/web_cards_delivery_clean.png",
             desc: "متابعة سلاسل تسليم الكروت المطبوعة ومطابقتها مع إيصالات السداد عبر كافة الفروع التشغيلية لمنع أي تأخير."
           }
